@@ -14,7 +14,7 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   
     return (
       <button {...props} style={styles()} className='rounded py-1.5 pr-1.5 pl-1.5'>
-       Name:{props.children}
+       Title:{props.children}
       </button>
     );
   };
