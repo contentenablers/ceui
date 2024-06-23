@@ -1,5 +1,6 @@
 # CE UI Component framework
 - Component library which can be used across CE Applications
+- Initial setup and  implementation
 
 ##### Enviornment
 
@@ -14,9 +15,10 @@ To run storybook
 ```sh
 npm run storybook
 ```
-#####  Open source  
+#####  Open sources
 - [tailwindcss]
 - [tailwindui]
+- [headlessui]
 
 ##### Standards :
 - [conventionalcommits] - follow commiting standard for CI/CD
@@ -28,5 +30,7 @@ npm run storybook
 
 [tailwindui]: <tailwindui.com> 
 [tailwindcss]: <https://tailwindcss.com/> 
+[headlessui]: <https://headlessui.com/> 
+
 [conventionalcommits]: <https://www.conventionalcommits.org/en/v1.0.0/#summary>
 [semantic release]: <https://semantic-release.gitbook.io/>
