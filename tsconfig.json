@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "declaration": true,
+    "declarationDir": "types",
+    "outDir": "dist",
+    "strict": true,
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Node"
+  },
+  "include": ["lib","stories/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

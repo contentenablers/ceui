@@ -1,0 +1,21 @@
+
+### react ###
+logs
+dist/
+node_modules
+storybook-static/
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+build
+.env.development
+.env.production
+.env.test
+.DS_Store
+
+*storybook.log
+.git
