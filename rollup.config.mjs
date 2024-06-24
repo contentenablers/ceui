@@ -5,6 +5,8 @@ import dts from 'rollup-plugin-dts';
 import packageJson from './package.json' assert { type: 'json' };
 import postcss from 'rollup-plugin-postcss'
 
+const production = !process.env.ROLLUP_WATCH;
+
 export default [
   {
     input: 'lib/index.ts',
@@ -40,6 +42,6 @@ export default [
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
-    external: [/\.css$/, "react"],
+    external: [/\.css$/,"reaact","react-dom"],
   },
 ];

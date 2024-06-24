@@ -28,14 +28,7 @@ const Card: React.FC<CardProps> = ({ title, image, description }) => {
     </p>
   </form>
 </div>
-
-    // <div  className="shadow-2xl bg-white flex font-sans shadow-2xl rounded-lg">
-    //   <img src={image} alt={title} className="card-image" />
-    //   <div className="card-content">
-    //     <h2 className="card-title">{title}</h2>
-    //     <p className="card-description">{description}</p>
-    //   </div>
-    // </div>
+ 
   );
 };
 
