@@ -8,7 +8,7 @@ import { CursorArrowRaysIcon, } from '@heroicons/react/24/outline'
 
 interface MenuProps {
     ctas: Array<{ name: string, href: string }>;
-    menuitems: Array<{ name: String, description: string }>;
+    menuitems: Array<{ name: string, description: string, href:string }>;
 }
 
 const FlyoutMenu: React.FC<MenuProps> = ({ ctas, menuitems }) => {
