@@ -4,6 +4,9 @@ import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import packageJson from './package.json' assert { type: 'json' };
 import postcss from 'rollup-plugin-postcss'
+import terser from '@rollup/plugin-terser';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import { babel } from '@rollup/plugin-babel';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -23,8 +26,14 @@ export default [
       },
     ],
     plugins: [
-      resolve(),
+      resolve({moduleDirectories: ['node_modules']}),
+      peerDepsExternal(),
       commonjs(),
+      babel({
+        extensions: ['.js', '.jsx'],
+        exclude: 'node_modules/**',
+      }),
+      terser(),
       typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.ts'] }),
       postcss({
         // Extract CSS to a separate file
@@ -42,6 +51,6 @@ export default [
     input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
-    external: [/\.css$/,"reaact","react-dom"],
+    external: ['react', 'react-dom',/\.css$/],
   },
 ];

@@ -10,7 +10,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "Node"
+    "moduleResolution": "Bundler"
   },
   "include": ["lib","stories/**/*"],
   "exclude": ["node_modules", "dist","react","react-dom"]
