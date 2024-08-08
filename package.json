@@ -37,6 +37,7 @@
     "@storybook/addon-links": "^8.1.6",
     "@storybook/addon-onboarding": "^8.1.6",
     "@storybook/blocks": "^8.1.6",
+    "@storybook/jest": "^0.2.3",
     "@storybook/react": "^8.1.6",
     "@storybook/react-vite": "^8.1.6",
     "@storybook/test": "^8.1.6",
@@ -76,8 +77,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "dependencies": {
-    "@storybook/jest": "^0.2.3"
   }
 }
