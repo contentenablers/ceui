@@ -34,3 +34,6 @@ npm run storybook
 
 [conventionalcommits]: <https://www.conventionalcommits.org/en/v1.0.0/#summary>
 [semantic release]: <https://semantic-release.gitbook.io/>
+
+
+Removed CTA,PulldownButton 0n 8th august 24 in new branch 
