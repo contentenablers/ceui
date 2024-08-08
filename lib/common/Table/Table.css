@@ -1,0 +1,115 @@
+.table-container {
+  position: relative;
+  /* width: 80vw; Max width to prevent excessive stretching */
+  width: 75vw;
+  margin: auto;
+  box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px, rgba(15, 23, 42, 0.1) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+  overflow-x: auto; /* Prevent horizontal scrolling */
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.table-container table {
+  width: 100%; 
+  border-collapse: collapse; /* Remove space between table cells */
+  table-layout: auto; /* Adjust column widths based on content */
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.table-container th,
+.table-container td {
+  word-wrap: break-word; /* Break long words to fit the cell */
+  overflow-wrap: break-word; /* Ensure long words are wrapped */
+  hyphens: auto; /* Optional: Adds hyphenation for better readability */
+  padding: 8px;
+  border-bottom: 1px solid #dee2e6;
+  max-width: none; /* Remove any max-width to allow full use of available space */
+  text-align: left; /* Default text alignment */
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.table-container th {
+  background-color: #f8f9fa; /* Light background color for headers */
+}
+
+.table-container.rounded-lg table {
+  border-radius: 16px 16px 0 0; /* Rounded corners for the table */
+}
+
+.table-container.rounded-lg .pagination-container {
+  border-radius: 0 0 16px 16px; /* Rounded corners for pagination matching the table */
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.table-container table tr td:first-of-type,
+.table-container table tr th:first-of-type {
+  padding-left: 24px;
+}
+
+.table-container table tr td:last-of-type,
+.table-container table tr th:last-of-type {
+  padding-right: 24px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem;
+  background-color: #f1f1f1;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid #dee2e6;
+}
+
+.pagination-button,
+.pagination-number {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination-button:disabled {
+  background-color: #c0c0c0;
+  cursor: not-allowed;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.pagination-number {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.pagination-number.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination-number:hover:not(.selected) {
+  background-color: #d1d1d1;
+}
+
+.pagination-ellipsis {
+  margin: 0 0.25rem;
+  color: #333;
+}
+
+.sticky-header {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  background-color: #fff; /* Background color to ensure readability */
+  z-index: 10; /* Ensure the header stays above other content */
+}
