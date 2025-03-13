@@ -1,3 +1,51 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+/**
+* CEUI followed this color principals ( in tailwind we configured like c1,c2,c3,c4 like that )
+*/
+:root{
+  --color-p1:#002873;
+  --color-p2:#FF0A3C;
+  --color-p3:#000A28;
+  --color-p4:#F6F6F6;
+  --box-shadow-p1: 0 0 0 2px rgba(59, 130, 246, 0.5)
+}
+
+
+/* Global Animation for Hover, Focus, Active, disabled States */
+@layer utilities {
+    .interactive-element {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), all 300ms cubic-bezier(0.4, 0, 0.2, 1); /* Unified transition */
+    }
+  
+    /* Hover State */
+    .interactive-element:hover {
+      transform: scale(1.1);
+    }
+  
+    /* Focus State */
+    .interactive-element:focus {
+      transform: scale(1.1); 
+      outline: none; 
+      box-shadow: var(--box-shadow-p1); 
+    }
+  
+    /* Active State */
+    .interactive-element:active {
+      transform: scale(0.95);
+    }
+
+    /* Disable state */
+    .interactive-element:disabled {
+      @apply opacity-70;
+      cursor: not-allowed;
+    }
+    .interactive-element:disabled:hover {
+      transform: unset;
+    }
+
+  }
+  
