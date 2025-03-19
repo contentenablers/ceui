@@ -1,0 +1,46 @@
+/* input default style */
+input{
+    outline: none;
+    width: 100%; 
+}
+textarea{
+    outline: none;
+    width: 100%; 
+    @apply p-2;
+}
+
+.input .ceui-element:focus,.input .ceui-element:active{
+    @apply rounded-md ;
+}
+
+
+/*  based on variant we will get the class names like  ({variant}-input-box) and ({variant}-input) */
+.default-input{
+    background: color-mix(in srgb, var(--color-p1) 5%, transparent);
+    @apply border p-2;
+}
+.input--default:focus-visible {
+    outline: 2px solid var(--color-p4);
+}
+
+/* prefix_suffix input */
+.prefix_suffix-input-area{
+    display: flex;
+    align-items: center;
+    @apply border p-2 rounded-3xl !important;
+}
+.ceui-input-prefix,
+.ceui-input-suffix {
+    margin: 0 0.5rem;
+}
+
+.prefix_suffix-input:focus-visible{
+  border:none;
+  outline: none;
+}
+
+/* textarea input */
+
+.textarea-input{
+    background: color-mix(in srgb, var(--color-p1) 5%, transparent);
+}

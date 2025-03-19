@@ -1,3 +1,3 @@
 button {
-    @apply border text-center px-4 py-1 rounded-xl;
+    @apply border text-center px-4 py-1;
   }

@@ -1,0 +1,12 @@
+.ceui-button-group{
+    display: flex;
+    flex-direction: row;
+}
+.ceui-button-group-button{
+    transition: transform 0.3s var(--ease-custom-p1);
+}
+.ceui-active-btn{
+  background-color: var(--color-p5);
+  color: white;
+  transform:scale(1.03);
+}
