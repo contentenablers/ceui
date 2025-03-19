@@ -29,7 +29,7 @@ const IconButton: React.FC<IconButtonProps> = ({
   return (
     <button
       role="button"
-      className={`${className} p-2 border-none interactive-element`}
+      className={`${className} p-2 border-none ceui-element`}
       onClick={onClick}
       aria-label={name}
     >

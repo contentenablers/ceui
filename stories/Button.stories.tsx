@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button, Icon, IconsList } from "../lib/common";
+import { Button,IconsList } from "../lib/common";
 import { userEvent, within } from "@storybook/test";
-import { sizes, variants } from "../lib/common/Button/ButtonThemeList";
+import { SIZE, BUTTON_VARIANT } from "../lib/utils/ThemeList";
 
 const meta: Meta<typeof Button> = {
   title: "Common/Button",
@@ -21,7 +21,7 @@ const meta: Meta<typeof Button> = {
     },
     variant: {
       control: "select",
-      options: Object.keys(variants),
+      options: Object.keys(BUTTON_VARIANT),
       description: "Choose the button style (e.g., primary, secondary).",
     },
     startIcon: {
@@ -40,7 +40,7 @@ const meta: Meta<typeof Button> = {
         "Custom properties for the icon component (e.g., color, size).",
     },
     size: {
-      options: Object.keys(sizes),
+      options: Object.keys(SIZE),
       control: "select",
       description: "Select the button size (small, medium, large).",
     },
@@ -95,3 +95,4 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
+

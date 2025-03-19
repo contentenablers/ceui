@@ -1,0 +1,4 @@
+.ceui-chip-element {
+   @apply flex items-center gap-x-2.5 cursor-pointer whitespace-nowrap;
+   @apply border text-center  rounded-xl;
+ }

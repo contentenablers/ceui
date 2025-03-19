@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'WorkSansRegular';
+    src: url('../assets/fonts/WorkSans/WorkSans-Regular.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'WorkSansMedium';
+    src: url('../assets/fonts/WorkSans/WorkSans-Medium.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'WorkSansBold';
+    src: url('../assets/fonts/WorkSans/WorkSans-Bold.woff2')  format('woff2');
+  }
+
+  @font-face {
+    font-family: 'GilroyRegular';
+    src: url('../assets/fonts/Gilroy/Gilroy-Regular.woff2')  format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'GilroyMedium';
+    src: url('../assets/fonts/Gilroy/Gilroy-Medium.woff2')  format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'GilroyBold';
+    src: url('../assets/fonts/Gilroy/Gilroy-Bold.woff2')  format('woff2');
+  }
+
+  :root{
+     /* WorkSans */
+    --font-work-sans-regular: 'WorkSansRegular';
+    --font-work-sans-medium: 'WorkSansMedium';
+    --font-work-sans-bold: 'WorkSansBold';
+
+     /* Gilroy */
+    --font-gilroy-regular: 'GilroyRegular';
+    --font-gilroy-medium: 'GilroyMedium';
+    --font-gilroy-bold: 'GilroyBold';
+
+    /* Global Font */
+    --font-family-p1: var(--font-gilroy-regular);
+    --font-family-bold-p1:var(--font-gilroy-bold);
+
+  }

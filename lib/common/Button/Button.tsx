@@ -1,8 +1,11 @@
 import "./Button.css";
 import React from "react";
 import IconsList from "../Icon/IconsList";
-import Icon from "../Icon";
-import { sizes, variants } from "./ButtonThemeList";
+import { SIZE, BUTTON_VARIANT } from "../../utils/ThemeList";
+import SuspenseWrapper from "../../utils/SuspenseWrapper";
+
+// Dynamically import Icon component
+const Icon = React.lazy(() => import("../Icon"));
 
 /**
  * A function component that renders a button with a specific theme (theme listing and creation we have buttonThemeList).
@@ -14,14 +17,14 @@ import { sizes, variants } from "./ButtonThemeList";
  * @param {boolean} [disabled=false] - Whether the button should be disabled.
  * @param {React.ReactNode} children - The content of the button.
  * @param {string} [className=''] - Additional CSS classes for the button element.
- * @param {string} [size='md'] - The size of the button. Can be buttonThemeList.
+ * @param {string} [size='medium'] - The size of the button. Can be buttonThemeList.
  */
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "primary-outline" | "secondary-outline";
+  variant?: keyof typeof BUTTON_VARIANT;
   startIcon?: keyof typeof IconsList;
   endIcon?: keyof typeof IconsList;
-  size?: "sm" | "md" | "lg";
+  size?: keyof typeof SIZE;
   iconArgs?: Parameters<typeof Icon>[0];
 }
 
@@ -33,20 +36,29 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   children,
   className,
-  size = "md",
-  iconArgs,
+  size = "medium",
+  iconArgs = {},
   ...rest
 }) => {
+  
+  const getIcon =(name: keyof typeof IconsList) => {
+      return (
+        <SuspenseWrapper>
+          <Icon {...iconArgs} name={name} />
+        </SuspenseWrapper>
+      );
+    }
+
   return (
     <button
       {...rest}
       role="button"
       disabled={disabled}
-      className={`py-1.5 px-2 flex items-center gap-1 interactive-element ${className} ${variants[variant]} ${sizes[size]}`}
+      className={`py-1.5 px-2 flex items-center gap-1 ${className} ${BUTTON_VARIANT[variant]} ${SIZE[size]}`}
     >
-      {startIcon && <Icon {...iconArgs} name={startIcon} />}
+      {startIcon && getIcon(startIcon)}
       <span>{children}</span>
-      {endIcon && <Icon {...iconArgs} name={endIcon} />}
+      {endIcon && getIcon(endIcon)}
     </button>
   );
 };

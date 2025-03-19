@@ -10,6 +10,7 @@ module.exports = {
         c2: 'var(--color-p2)', // Vivid Red / Crimson
         c3: 'var(--color-p3)', // Dark Midnight Blue
         c4: 'var(--color-p4)', // Light Gray / Soft Gray
+        c5:'var( --color-p4)', // 
         white: '#ffffff', // Pure White
       },
       fontSize: {

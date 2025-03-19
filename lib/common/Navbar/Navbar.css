@@ -1,0 +1,44 @@
+.ceui-navbar {
+    @apply flex sticky items-center w-full z-[1000] gap-x-4 bg-[red] min-h-[64px] top-0 inset-x-0;
+    @apply bg-white justify-between px-3;
+}
+.ceui-navbar-search {
+    @apply max-w-[30%] w-full;
+}
+.ceui-navbar-brand {
+    @apply w-3/12;
+}
+.ceui-navbar-brand-logo {
+    @apply max-w-[15%] h-[45px];
+}
+.brand-log-img {
+    object-fit: contain;
+}
+.ceui-navbar-search-chip{
+    transition: all 0.8s ease-in-out;
+}
+.ceui-navbar-actions {
+    @apply min-w-[30%] gap-x-2;
+    justify-content: end;
+    @apply flex items-center;
+}
+.ceui-navbar-search-input:active{
+    width: 100%;
+}
+
+.ceui-navbar-search-input:hover .ceui-navbar-search-chip,
+.ceui-navbar-search-input:focus-visible  .ceui-navbar-search-chip{
+  opacity: 0;
+  scale:0;
+}
+
+/* theme */
+.ceui-gray-navbar {
+    @apply bg-[color:var(--color-p4)];
+}
+
+
+/* input area white */
+.prefix_suffix-input-area {
+    @apply bg-[color:var(--color-white)];
+}
