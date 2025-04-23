@@ -18,7 +18,7 @@ jobs:
       - name: Pull latest tokens from submodule
         run: |
           git submodule update --init --force
-          cd sdx-figma-dictonary
+          cd sdx-figama-dictionary
           git fetch origin
           git checkout origin/main -- .
           cd ..
@@ -35,7 +35,7 @@ jobs:
       - name: Copy pre-built CSS to public folder
         run: |
           mkdir -p public/styles
-          cp sdx-figma-dictonary/output/fixed-tokens.css public/styles/tokens.css # Assuming singular 'token'
+          cp sdx-figama-dictionary/output/fixed-tokens.css public/styles/tokens.css # Assuming singular 'token'
 
       - name: Commit & push changes
         run: |
