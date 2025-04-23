@@ -18,7 +18,7 @@ jobs:
       - name: Pull latest tokens from submodule
         run: |
           git submodule update --init --force
-          cd figma-design-tokens
+          cd sdx-figma-dictonary
           git fetch origin
           git checkout origin/main -- .
           cd ..
