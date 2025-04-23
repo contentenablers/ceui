@@ -1,0 +1,31 @@
+.fixed-tokens-theme {
+  --base-primary-red: #FF0A3C;
+  --base-primary-blue: #002873;
+  --base-primary-white: #F6F6F6;
+  --button-border-radius-priamry: 100px;
+  --button-padding-primary: 16px 24px;
+  --button-primary-color: #FFFFFF;
+  --button-primary-background-color: #FF0A3C;
+  --button-primary-border-color: #F6F6F6;
+  --button-primary-border-width: 1px;
+  --button-primary-border-style: solid;
+  --button-typography-primary-fontFamily: Roboto;
+  --button-typography-primary-fontWeight: Medium;
+  --button-typography-primary-fontSize: 16px;
+  --button-import-color: #002873;
+  --button-import-background-color: #FFB90014;
+  --button-import-border-color: #FFB900;
+  --button-import-border-width: 1px;
+  --button-import-border-style: solid;
+  --button-secondary-color: #FF0A3C;
+  --button-secondary-background-color: #FFFFFF;
+  --button-secondary-border-width: 0px;
+  --button-secondary-border-style: solid;
+  --button-secondary-border-color: #ffffff;
+  --button-tertiary-border-color: #002873;
+  --button-tertiary-border-width: 1px;
+  --button-tertiary-border-style: solid;
+  --button-tertiary-color: #002873;
+  --button-tertiary-background-color: #fffff;
+  --card-padding-primary: 10px;
+}
