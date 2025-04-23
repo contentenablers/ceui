@@ -1,0 +1,3 @@
+[submodule "sdx-figama-dictionary"]
+	path = sdx-figama-dictionary
+	url = https://github.com/contentenablers/sdx-figama-dictionary.git

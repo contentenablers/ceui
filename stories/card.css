@@ -1,0 +1,54 @@
+
+  
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    color: #30508d;
+    font-weight: 600;
+  }
+  
+  .title {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;  /* Limits to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 5px 0px;
+    margin-bottom: 10px;
+  }
+  
+  .bookmark-icon {
+    cursor: pointer;
+    color: #30508d;
+  }
+  
+  .content-details {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* margin-top: 8px; */
+    color: #30508d;
+  }
+  .card-lesson{
+    font-size:14px;
+    line-height: 20px;
+    color:#FF0A3C;
+    margin-bottom: 16px;
+
+  }
+  .name{
+    color: #002873;
+    font-weight:500;
+    font-size: 16px;
+    line-height: 24px;
+
+  }
+  .info{
+    color: #000A28;
+    font-weight:400;
+    font-size: 14px;
+    line-height: 20PX;
+
+  }

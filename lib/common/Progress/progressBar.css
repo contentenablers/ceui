@@ -1,0 +1,58 @@
+.progress-bar {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progess-fill.animate {
+  animation: fillAnimation 1s ease-in-out forwards;
+}
+
+/* Animation using CSS variable */
+@keyframes fillAnimation {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress-value, 0%);
+  }
+}
+
+/* Circle Progress */
+.progress-circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-circle svg {
+  transform: rotate(-90deg);
+}
+
+.progress-label {
+  position: absolute;
+  font-weight: bold;
+}
+
+.progress-circle svg circle {
+    transition: none; 
+}
+
+.progress-circle.animate svg circle:nth-child(2) {
+    stroke-dashoffset: var(--progress-offset, 0); 
+    animation: fillAnimationCircle 1s ease-in-out forwards;
+}
+
+
+@keyframes fillAnimationCircle {
+    from {
+        stroke-dashoffset: var(--circumference, 0); /* Start empty */
+    }
+    to {
+        stroke-dashoffset: var(--progress-offset, 0); /* Final value */
+    }
+}
+  
+  
+
