@@ -18,7 +18,7 @@
     transition: all 0.8s ease-in-out;
 }
 .ceui-navbar-actions {
-    @apply min-w-[30%] gap-x-2;
+    @apply min-w-[30%] ;
     justify-content: end;
     @apply flex items-center;
 }

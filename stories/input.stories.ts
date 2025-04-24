@@ -86,9 +86,9 @@ export const DisabledInput: Story = {
 export const InputWithPlaceholder: Story = {
   args: {
     name: 'tooltipInput',
-    value: 'Input with Tooltip',
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => console.log(e.target.value),
     variant: 'default',
+    placeholder: 'InputWithPlaceholder',
   },
   parameters: {
     docs: {

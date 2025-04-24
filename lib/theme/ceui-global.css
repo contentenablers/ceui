@@ -1,0 +1,62 @@
+/* 
+  data-tooltip - This attribute is used to define tooltips for elements.
+  data-position - Specify tooltip position change the position as needed [top, bottom, right, left]
+  eg: <span data-tooltip='tooltip' data-position='left' /> like any tag
+*/
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+   /* Positioning for left tooltip */
+   /* Positioning for right tooltip */
+   /* Positioning for bottom tooltip */
+   /* Show tooltip on hover */
+}
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    background-color: var(--color-white);
+    color: var(--color-p1);
+    padding: 5px 10px;
+    border-radius: 4px;
+    opacity: 0.9 !important;
+    transition: opacity 0.3s, visibility 0.3s;
+    pointer-events: none;
+    display: block;
+    z-index: 1000;
+    max-width: 280px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   /* Default to top position if data-position attribute is not specified - Positioning for top tooltip */
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 5px;
+}
+[data-tooltip][data-position='left']::after {
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 5px;
+    bottom: unset;
+    left: unset;
+}
+[data-tooltip][data-position='right']::after {
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5px;
+    bottom: unset;
+}
+[data-tooltip][data-position='bottom']::after {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 5px;
+    bottom: unset;
+}
+[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}

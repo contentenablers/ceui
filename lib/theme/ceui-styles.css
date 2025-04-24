@@ -1,3 +1,5 @@
+@import url('./ceui-global.css');
+
 /**
 * CEUI followed this color principals ( in tailwind we configured like c1,c2,c3,c4 like that )
 *
@@ -12,11 +14,14 @@
 
     /* Common Colors */
     --color-white: #ffffff;
+    --color-black:#000;
 
     /* Custom ease */
     --ease-custom-p1: cubic-bezier(0.4, 0, 0.2, 1);
      
-    --box-shadow-p1: 0 0 0 2px rgba(59, 130, 246, 0.5);
+    --box-shadow-p1:0px 4px 4px 0px #00287314;
+    --box-shadow-p2: 0 0 0 2px rgba(59, 130, 246, 0.5);
+
     --border-radius-p1:4px;
     --padding-p1:10px 15px;
     --line-height-p1:24px;

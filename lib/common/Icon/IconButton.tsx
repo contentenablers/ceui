@@ -1,4 +1,5 @@
 import IconsList from "./IconsList";
+import Button from "../Button";
 
 /**
  * A function component that renders an SVG icon. The available icons are
@@ -27,7 +28,9 @@ const IconButton: React.FC<IconButtonProps> = ({
   const iconElement = IconsList[name] ?? null;
 
   return (
-    <button
+    <Button
+      {...props}
+      variant="default"
       role="button"
       className={`${className} p-2 border-none ceui-element`}
       onClick={onClick}
@@ -40,11 +43,10 @@ const IconButton: React.FC<IconButtonProps> = ({
         viewBox="0 0 24 24"
         role="img"
         className={`${className}-svg`}
-        {...props}
       >
         {iconElement}
       </svg>
-    </button>
+    </Button>
   );
 };
 
