@@ -12,6 +12,7 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "Bundler"
   },
-  "include": ["lib","stories/**/*"],
-  "exclude": ["node_modules", "dist","react","react-dom"]
+  "include": ["lib", "stories/**/*","src/**/*", "src/index.d.ts","declarations.d.ts" ],
+  "exclude": ["_node_modules", "dist", "react", "react-dom"
+  ]
 }

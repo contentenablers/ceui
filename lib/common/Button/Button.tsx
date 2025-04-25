@@ -26,6 +26,7 @@ export interface ButtonProps
   endIcon?: keyof typeof IconsList;
   size?: keyof typeof SIZE;
   iconArgs?: Parameters<typeof Icon>[0];
+  ref?:React.Ref<HTMLButtonElement>
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -38,6 +39,7 @@ const Button: React.FC<ButtonProps> = ({
   className,
   size = "medium",
   iconArgs = {},
+  ref,
   ...rest
 }) => {
   
@@ -55,6 +57,7 @@ const Button: React.FC<ButtonProps> = ({
       role="button"
       disabled={disabled}
       className={`py-1.5 px-2 flex items-center gap-1 ${className} ${BUTTON_VARIANT[variant]} ${SIZE[size]}`}
+      ref={ref}
     >
       {startIcon && getIcon(startIcon)}
       <span>{children}</span>

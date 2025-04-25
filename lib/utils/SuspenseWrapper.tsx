@@ -1,4 +1,3 @@
-// SuspenseWrapper.tsx (or .jsx)
 import React, { Suspense } from "react";
 
 /**

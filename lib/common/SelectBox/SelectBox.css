@@ -1,0 +1,28 @@
+
+.container {
+  @apply block relative cursor-pointer text-xl select-none rounded-[5px];
+  display: flex;
+  column-gap: 8px;
+}
+
+.checkmark {
+  @apply relative h-[1.3em] w-[1.3em]  left-0 top-0 after:content-[""] after:absolute after:opacity-0 after:transition-all after:duration-[0.2s];
+}
+
+.input:checked{
+  background-color: red;
+}
+
+.container input:checked ~ .checkmark:after {
+  opacity: 1;
+  transition: all 0.2s;
+ }
+ 
+ .checked:after {
+  left: 0.50em;
+  top: 0.25em;
+  width: 0.30em;
+  height: 0.7em;
+  border-width: 0 0.15em 0.15em 0;
+  transform: rotate(45deg);
+ }

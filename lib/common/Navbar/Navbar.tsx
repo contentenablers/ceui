@@ -1,10 +1,9 @@
 import React from 'react';
 import './Navbar.css';
-import Input from '../Input/Input';
-import Icon from '../Icon/Icon';
-import Chip from '../Chip/Chip';
-import LazyImage from '../LazyImage';
-
+const Input=React.lazy(()=>import ('../Input'));
+const Icon =React.lazy(()=>import('../Icon'));
+const Chip=React.lazy(()=>import('../Chip'));
+const LazyImage=React.lazy(()=>import('../LazyImage'));
 
 /**
  * A React functional component for rendering a customizable navigation bar.

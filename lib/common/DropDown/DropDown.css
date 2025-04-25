@@ -1,0 +1,4 @@
+.ceui-drop-down{
+    box-shadow:var(--box-shadow-p1);
+    overflow: hidden !important;
+}
