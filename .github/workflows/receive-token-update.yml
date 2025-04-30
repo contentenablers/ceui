@@ -34,14 +34,13 @@ jobs:
 
       - name: Copy pre-built CSS to public folder
         run: |
-          mkdir -p public/styles
-          cp sdx-figama-dictionary/output/fixed-tokens.css public/styles/tokens.css # Assuming singular 'token'
+          cp sdx-figama-dictionary/output/fixed-tokens.css lib/styles/styleTokens.css # Assuming singular 'token'
 
       - name: Commit & push changes
         run: |
             git config user.name "anand-ceindia"
             git config user.email "itadmin@contentenablers.com"
             git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/contentenablers/ceui.git
-            git add public/styles/tokens.css
+            git add lib/styles/styleTokens.css
             git commit -m "feat:♻️ Update token CSS from submodule" || echo "No changes to commit"
             git push
