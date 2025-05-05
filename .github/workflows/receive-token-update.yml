@@ -27,20 +27,21 @@ jobs:
         run: |
           echo "PWD: $(pwd)"
           ls -la
-          echo "\nContents of figma-design-tokens:"
-          ls -la figma-design-tokens || echo "❌ figma-design-tokens directory not found!"
-          echo "\nContents of figma-design-tokens/output:"
-          ls -la figma-design-tokens/output || echo "❌ figma-design-tokens/output directory not found!"
+          echo "\nContents of sdx-figama-dictionary:"
+          ls -la sdx-figama-dictionary || echo "❌ sdx-figama-dictionary directory not found!"
+          echo "\nContents of sdx-figama-dictionary/output:"
+          ls -la sdx-figama-dictionary/output || echo "❌ output directory not found!"
 
-      - name: Copy pre-built CSS to public folder
+      - name: Copy pre-built CSS to lib/styles folder
         run: |
-          cp sdx-figama-dictionary/output/fixed-tokens.css lib/styles/styleTokens.css # Assuming singular 'token'
+          mkdir -p lib/styles
+          cp sdx-figama-dictionary/output/fixed-tokens.css lib/styles/tokens.css
 
       - name: Commit & push changes
         run: |
-            git config user.name "anand-ceindia"
-            git config user.email "itadmin@contentenablers.com"
-            git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/contentenablers/ceui.git
-            git add lib/styles/styleTokens.css
-            git commit -m "feat:♻️ Update token CSS from submodule" || echo "No changes to commit"
-            git push
+          git config user.name "anand-ceindia"
+          git config user.email "itadmin@contentenablers.com"
+          git remote set-url origin https://${{ secrets.GH_PAT }}@github.com/contentenablers/ceui.git
+          git add lib/styles/tokens.css
+          git commit -m "feat:♻️ Update token CSS from submodule" || echo "No changes to commit"
+          git push
