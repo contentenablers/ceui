@@ -10,8 +10,8 @@
   --button-primary-border-width: 1px;
   --button-primary-border-style: solid;
   --button-typography-primary-fontFamily: Roboto;
-  --button-typography-primary-fontWeight: Medium;
   --button-typography-primary-fontSize: 16px;
+  --button-typography-primary-fontWeight: 500;
   --button-import-color: #002873;
   --button-import-background-color: #FFB90014;
   --button-import-border-color: #FFB900;
