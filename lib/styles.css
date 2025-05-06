@@ -4,4 +4,5 @@
 /* CEUI Custom styles */
 @import './theme/ceui-styles.css';
 @import './theme/fonts.css';
-@import '../stories/Stories.css'
+@import '../stories/Stories.css';
+@import url("./styles/tokens.css");

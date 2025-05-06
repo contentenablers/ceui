@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState } from 'react';
 import './LazyImage.css';
-import placeholder from './placeholder.webp';
+// import placeholder from './placeholder.webp';
 /**
  * A lazy-loaded image component that uses IntersectionObserver to determine
  * when the image is visible in the viewport. It takes the following props:
@@ -78,7 +78,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
     <>
    <img
       ref={imageRef}
-      src={(isInView ? src : placeholder)}
+      src={(isInView ? src : "https://assets.contentenablers.com/storefront_stg/imgs/ce_new_logo_skill_comp.webp?imwidth=750")}
       srcSet={(isInView && srcSet )? srcSet : undefined}  // only set srcSet when in view
       sizes={sizes}  // optionally add a sizes attribute for responsive images
       alt={alt}
