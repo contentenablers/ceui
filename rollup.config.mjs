@@ -12,7 +12,7 @@ const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 export default [
   // JS + CSS bundle
   {
-    input: 'lib/index.ts',
+    input: 'lib/index.ts', // Adjust to the correct entry file
     output: [
       {
         dir: 'dist/cjs',
@@ -34,26 +34,26 @@ export default [
       resolve({ extensions }),
       commonjs(),
       babel({
-        extensions,
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
         babelHelpers: 'bundled',
         exclude: 'node_modules/**',
       }),
       postcss({
         minimize: true,
-        extract: true, // Outputs styles.css in dist
+        extract: true,
       }),
       terser(),
     ],
   },
 
-  // Types bundle
+  // Type Declarations
   {
-    input: 'dist/types/lib/index.d.ts', // This is where TypeScript outputs declarations
+    input: 'lib/index.ts', // Ensure this points to your entry TypeScript file
     output: {
       file: 'dist/index.d.ts',
       format: 'esm',
     },
     plugins: [dts()],
-    external: [/\.css$/],
+    external: [/\.css$/], // Exclude CSS files
   },
 ];

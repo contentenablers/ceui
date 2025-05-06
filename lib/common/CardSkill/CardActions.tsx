@@ -1,7 +1,13 @@
 import React from 'react';
 import { useCardContext } from './CardContext';
+import { BUTTON_VARIANT, SIZE } from '../../utils/ThemeList';
 import Button from '../Button';
-
+export interface CardButton {
+  label: string;
+  onClick: () => void;
+  variant?: keyof typeof BUTTON_VARIANT;
+  size?: keyof typeof SIZE;
+}
 const CardActions= ({  }) => {
   const { layout,buttons,position } = useCardContext();
   return (
@@ -10,6 +16,7 @@ const CardActions= ({  }) => {
     >
       {buttons.map((btn, idx) => (
         <Button 
+        key={idx}
         onClick={btn.onClick} 
         className={"button-sKill-card"}
         variant={btn.variant}

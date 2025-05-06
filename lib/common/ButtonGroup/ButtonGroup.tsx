@@ -1,8 +1,9 @@
-import React, { lazy,useCallback,useState } from "react";
+import React, { lazy, useCallback, useState } from "react";
 import "./ButtonGroup.css";
 import { SIZE, BUTTON_GROUP_VARIANT } from "../../utils/ThemeList";
-import clsx from 'clsx'
+import clsx from "clsx";
 
+// Lazy-load Button component
 const Button = lazy(() => import("../Button"));
 
 export interface ButtonProps {
@@ -10,56 +11,66 @@ export interface ButtonProps {
   onClick?: () => void;
   active?: boolean;
   disabled?: boolean;
-  children: any;
-  className?:string
+  children: React.ReactNode;
+  className?: string;
 }
 
-
-export interface ButtonGroupProps{
+export interface ButtonGroupProps {
   variant?: keyof typeof BUTTON_GROUP_VARIANT;
   buttonsArgs: ButtonProps[];
   size?: keyof typeof SIZE;
-  className?:string;
-  onClick?: () => void,
-  active:Number
+  className?: string;
+  onClick?: () => void;
+  active?: number; // optional and type fixed
 }
 
 const ButtonGroup: React.FC<ButtonGroupProps> = ({
-    variant='default',
-    buttonsArgs=[],
-    size,
-    className,
-    active
+  variant = "default",
+  buttonsArgs = [],
+  size = "medium", // default size to prevent undefined index
+  className,
+  active,
 }) => {
+  const [activeButton, setActiveButton] = useState<number>();
 
-  const [activeButton, setActiveButton] = useState<number>();  // Track the active button
-  
-  const handleButtonClick = useCallback((index: number) => {
-    setActiveButton(index); // Update active button state on click
-    buttonsArgs[index]?.onClick?.(); 
-  },[]);
+  const handleButtonClick = useCallback(
+    (index: number) => {
+      setActiveButton(index);
+      buttonsArgs[index]?.onClick?.();
+    },
+    [buttonsArgs]
+  );
 
-  return ( <div className={`ceui-button-group inline-flex rounded-md shadow-xs ${className}`} role="group" >
-      {buttonsArgs.map((button:any, index:number) => {
-        const hasClicked=(index===activeButton|| active)
-       return <Button
-          key={index}
-          {...button}
-          className={clsx(
-            'ceui-button-group-button', 
-            hasClicked && 'ceui-active-btn', // Conditional class based on hasClicked
-            BUTTON_GROUP_VARIANT[variant], 
-            SIZE[size], 
-            button?.className
-          )}
-          variant= "default"
-          onClick={()=>handleButtonClick(index)}
-        >
-          {button.children}
-        </Button>
-     })}
-  </div>);
+  return (
+    <div
+      className={clsx(
+        "ceui-button-group inline-flex rounded-md shadow-xs",
+        className
+      )}
+      role="group"
+    >
+      {buttonsArgs.map((button, index) => {
+        const isActive = index === activeButton || index === active;
+        return (
+          <Button
+            key={index}
+            {...button}
+            className={clsx(
+              "ceui-button-group-button",
+              isActive && "ceui-active-btn",
+              BUTTON_GROUP_VARIANT[variant],
+              SIZE[size],
+              button?.className
+            )}
+            variant="default"
+            onClick={() => handleButtonClick(index)}
+          >
+            {button.children}
+          </Button>
+        );
+      })}
+    </div>
+  );
+};
 
-}
-
-export default ButtonGroup
+export default ButtonGroup;

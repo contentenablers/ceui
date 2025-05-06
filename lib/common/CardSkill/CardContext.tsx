@@ -2,6 +2,8 @@
 import React, { createContext, useContext } from 'react';
 
 interface Button {
+  size: "small" | "medium" | "large" | undefined;
+  variant: "default" | "primary" | "secondary" | "primary-outline" | "secondary-outline" | "primary-card" | "secondary-card" | undefined;
   label: string;
   onClick: () => void;
 }

@@ -1,4 +1,5 @@
 import IconsList from "./IconsList";
+import {  BUTTON_VARIANT } from "../../utils/ThemeList";
 import Button from "../Button";
 
 /**
@@ -11,7 +12,7 @@ import Button from "../Button";
  * @param {React.SVGAttributes<SVGElement>} props - Additional props to spread
  *     onto the SVG element.
  */
-export interface IconButtonProps extends React.SVGAttributes<SVGElement> {
+export interface IconButtonProps extends  React.ButtonHTMLAttributes<HTMLButtonElement>  {
   name: keyof typeof IconsList;
   size?: number;
   className?: string;
