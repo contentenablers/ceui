@@ -1,56 +1,59 @@
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
-import dts from 'rollup-plugin-dts';
-import packageJson from './package.json' assert { type: 'json' };
-import postcss from 'rollup-plugin-postcss'
+import babel from '@rollup/plugin-babel';
+import postcss from 'rollup-plugin-postcss';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import { babel } from '@rollup/plugin-babel';
+import dts from 'rollup-plugin-dts';
+import packageJson from './package.json' assert { type: 'json' };
 
-const production = !process.env.ROLLUP_WATCH;
+const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 export default [
+  // JS + CSS bundle
   {
     input: 'lib/index.ts',
     output: [
       {
-        file: packageJson.main,
+        dir: 'dist/cjs',
         format: 'cjs',
         sourcemap: true,
+        preserveModules: true,
+        entryFileNames: '[name].cjs.js',
       },
       {
-        file: packageJson.module,
+        dir: 'dist/esm',
         format: 'esm',
         sourcemap: true,
+        preserveModules: true,
+        entryFileNames: '[name].esm.js',
       },
     ],
     plugins: [
-      resolve({moduleDirectories: ['node_modules']}),
       peerDepsExternal(),
+      resolve({ extensions }),
       commonjs(),
       babel({
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions,
         babelHelpers: 'bundled',
         exclude: 'node_modules/**',
       }),
-      terser(),
-      typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.ts'] }),
       postcss({
-        // Extract CSS to a separate file
-        minimize: true, extract: true, // Minimize the CSS
-      })
+        minimize: true,
+        extract: true, // Outputs styles.css in dist
+      }),
+      terser(),
     ],
-    onwarn: (warning, rollupWarn) => {
-      // Ignore specific warnings
-      if (warning.code === 'MODULE_LEVEL_DIRECTIVE') return;
-      rollupWarn(warning);
-    },
   },
+
+  // Types bundle
   {
-    input: 'dist/esm/types/index.d.ts',
-    output: {dir: 'dist/types', format: 'esm',},
+    input: 'dist/types/lib/index.d.ts', // This is where TypeScript outputs declarations
+    output: {
+      file: 'dist/index.d.ts',
+      format: 'esm',
+    },
     plugins: [dts()],
-    external: ['react', 'react-dom',/\.css$/],
+    external: [/\.css$/],
   },
 ];
