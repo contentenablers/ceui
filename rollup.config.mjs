@@ -30,17 +30,17 @@ export default [
       peerDepsExternal(),
       commonjs(),
       babel({
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        babelHelpers: 'bundled',
         exclude: 'node_modules/**',
       }),
       terser(),
       typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.ts'] }),
       postcss({
         // Extract CSS to a separate file
-        minimize: true, // Minimize the CSS
+        minimize: true, extract: true, // Minimize the CSS
       })
     ],
-    
     onwarn: (warning, rollupWarn) => {
       // Ignore specific warnings
       if (warning.code === 'MODULE_LEVEL_DIRECTIVE') return;
@@ -49,7 +49,7 @@ export default [
   },
   {
     input: 'dist/esm/types/index.d.ts',
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    output: {dir: 'dist/types', format: 'esm',},
     plugins: [dts()],
     external: ['react', 'react-dom',/\.css$/],
   },
