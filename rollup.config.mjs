@@ -50,7 +50,7 @@ export default [
     },
   },
   {
-    input: 'dist/index.d.ts',
+    input: 'dist/esm/types/lib/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
     external: ['react', 'react-dom',/\.css$/],
