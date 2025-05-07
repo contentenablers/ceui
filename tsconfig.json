@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "es5",
+    "module": "esnext",
     "declaration": true,
-    "declarationDir": "dist/types",  // Ensure this points to the correct folder
+    // "declarationDir": "dist/types",
+    "outDir": "dist",
+    "strict": true,
     "jsx": "react-jsx",
-    "moduleResolution": "Node",
-    "isolatedModules": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "strict": true
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "Bundler"
   },
-  "include": ["lib"]
+  "include": ["lib", "stories/**/*","src/**/*", "src/index.d.ts","declarations.d.ts" ],
+  "exclude": ["_node_modules", "dist", "react", "react-dom"
+  ]
 }

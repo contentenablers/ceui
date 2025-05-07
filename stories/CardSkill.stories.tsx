@@ -48,13 +48,13 @@ export const ColumnLayoutWithButtonsOnImage: Story = {
     layout: 'card-col',
     position: 'onImage',
     buttons: [
-      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'lg' },
-      { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'md' },
-      { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'outline', size: 'md' },
+      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'large' },
+      { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'medium' },
+      { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'primary', size: 'medium' },
     ],
     children: (
       <>
-        <CardImage src={sampleImage} alt="Sample Image" />
+        <CardImage src={sampleImage} alt="Sample Image" height={0} menu={false} />
         <CardContent>
           <h3>Column Layout with Buttons on Image</h3>
           <p>This card displays buttons on the image when hovered.</p>
@@ -93,9 +93,9 @@ export const ColLayoutWithButtonsAtEnd: Story = {
     src: sampleImage,
     title: "Sample Image",
     buttons: [
-      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'md' },
-      { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'md' },
-      { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'outline', size: 'md' },
+      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'medium' },
+      { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'medium' },
+      { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'primary', size: 'medium' },
     ],
     children: (
       <>
@@ -114,9 +114,9 @@ export const RowLayoutWithButtonsAtEnd: Story = {
     src: sampleImage,
     title: "Sample Image",
     buttons: [
-      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'md' },
-      { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'md' },
-      { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'outline', size: 'md' },
+      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'medium' },
+      { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'medium' },
+      { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'primary', size: 'medium' },
     ],
     children: (
       <>
@@ -150,7 +150,7 @@ export const ColumnWithoutButtons: Story = {
     layout: 'card-col',
     children: (
       <>
-        <CardImage src={sampleImage} alt="Sample Image" />
+        <CardImage src={sampleImage} alt="Sample Image" height={0} menu={false}  />
         <CardContent>
           <h3>Column Layout + Extra Content</h3>
           <p>Additional text and icons can be included for enhanced details.</p>
@@ -190,7 +190,7 @@ export const CardWithBookmark: Story = {
     buttons: [
       { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary-card', size: 'medium' },
       { label: 'Start Course', onClick: () => console.log('Resume clicked'), variant: 'secondary-card', size: 'medium' },
-      // { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'outline', size: 'md' },
+      // { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'outline', size: 'medium' },
     ],
     width: '286px',
     height: '307px',

@@ -1,59 +1,58 @@
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import babel from '@rollup/plugin-babel';
-import postcss from 'rollup-plugin-postcss';
-import terser from '@rollup/plugin-terser';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import typescript from '@rollup/plugin-typescript';
 import dts from 'rollup-plugin-dts';
 import packageJson from './package.json' assert { type: 'json' };
+import postcss from 'rollup-plugin-postcss'
+import terser from '@rollup/plugin-terser';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import { babel } from '@rollup/plugin-babel';
 
-const extensions = ['.js', '.jsx', '.ts', '.tsx'];
+const production = !process.env.ROLLUP_WATCH;
 
 export default [
-  // JS + CSS bundle
   {
-    input: 'lib/index.ts', // Adjust to the correct entry file
+    input: 'lib/index.ts',
     output: [
       {
-        dir: 'dist/cjs',
+        file: packageJson.main,
         format: 'cjs',
         sourcemap: true,
-        preserveModules: true,
-        entryFileNames: '[name].cjs.js',
+        inlineDynamicImports: true
       },
       {
-        dir: 'dist/esm',
+        file: packageJson.module,
         format: 'esm',
         sourcemap: true,
-        preserveModules: true,
-        entryFileNames: '[name].esm.js',
+        inlineDynamicImports: true
       },
     ],
     plugins: [
+      resolve({moduleDirectories: ['node_modules']}),
       peerDepsExternal(),
-      resolve({ extensions }),
       commonjs(),
       babel({
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        babelHelpers: 'bundled',
+        extensions: ['.js', '.jsx'],
         exclude: 'node_modules/**',
       }),
-      postcss({
-        minimize: true,
-        extract: true,
-      }),
       terser(),
+      typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.test.tsx', '**/*.test.ts', '**/*.stories.ts'] }),
+      postcss({
+        // Extract CSS to a separate file
+        minimize: true, // Minimize the CSS
+      })
     ],
-  },
-
-  // Type Declarations
-  {
-    input: 'lib/index.ts', // Ensure this points to your entry TypeScript file
-    output: {
-      file: 'dist/index.d.ts',
-      format: 'esm',
+    
+    onwarn: (warning, rollupWarn) => {
+      // Ignore specific warnings
+      if (warning.code === 'MODULE_LEVEL_DIRECTIVE') return;
+      rollupWarn(warning);
     },
+  },
+  {
+    input: 'dist/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
-    external: [/\.css$/], // Exclude CSS files
+    external: ['react', 'react-dom',/\.css$/],
   },
 ];

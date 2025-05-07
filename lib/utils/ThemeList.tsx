@@ -13,7 +13,9 @@ export const BUTTON_VARIANT = { //ceui-element rounded-xl
     'secondary-outline':'border-c2 text-c2 :hover:bg-c2 :hover:text-white ceui-element rounded-xl',
     'primary-card': 'bg-c2 text-white border-c2',
     'secondary-card': 'bg-white text-c2 border-white',
-    'default':''
+    'default':'',
+    'tertiary':'',
+    'import':'',
 };
 
 export const CHIP_VARIANT = {

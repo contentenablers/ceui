@@ -94,15 +94,7 @@ export const SmallButton: Story = {
   },
 };
 
-export const WithStartAndEndIcons: Story = {
-  args: {
-    variant: "primary",
-    children: "Start + End Icons",
-    startIcon: "add",
-    endIcon: "chevronRight",
-    iconArgs: { size: 18 },
-  },
-};
+
 
 export const Disabled: Story = {
   args: {

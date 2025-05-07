@@ -7,7 +7,7 @@ import { expect } from '@storybook/jest';
 
 
 
-const meta={
+const meta: Meta<typeof Table>={
   title: 'Common/Table',
   component: Table,
   tags: ['autodocs'],
