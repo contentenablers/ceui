@@ -40,11 +40,12 @@
   --accordion-padding: 24px;
   --accordion-gap: 24px;
   --accordion-border-radius: 12px;
-  --accordion-backgroundcolor: #FAFAFA;
+  --accordion-closed-backgroundcolor: #FAFAFA;
   --accordion-title-color: #333;
   --accordion-subtitle-color: rgba(51,51,51,0.5);
-  --accordion-primary-border-color: #f6f3f6;
+  --accordion-primary-border-color: rgba(0,40,115,0.08);
   --accordion-primary-border-width: 1px;
+  --accordion-open-background-color: #f9f9f9;
   --group-button-parent-backgroundcolor: #f6f6f6;
   --group-button-parent-border-radius: 8px;
   --group-button-parent-padding: 4px;
