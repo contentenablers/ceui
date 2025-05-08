@@ -43,6 +43,8 @@
   --accordion-backgroundcolor: #FAFAFA;
   --accordion-title-color: #333;
   --accordion-subtitle-color: rgba(51,51,51,0.5);
+  --accordion-primary-border-color: #f6f3f6;
+  --accordion-primary-border-width: 1px;
   --group-button-parent-backgroundcolor: #f6f6f6;
   --group-button-parent-border-radius: 8px;
   --group-button-parent-padding: 4px;
@@ -58,4 +60,6 @@
   --group-button-typography-lineHeight: 20px;
   --group-button-typography-fontWeight: 400;
   --group-button-typography-fontFamily: Roboto;
+  --list-title-color: rgba(51,51,51,0.8);
+  --list-subtitle-color: rgba(51,51,51,0.5);
 }
