@@ -63,4 +63,9 @@
   --group-button-typography-fontFamily: Roboto;
   --list-title-color: rgba(51,51,51,0.8);
   --list-subtitle-color: rgba(51,51,51,0.5);
+  --progress-bar-circle-complete: #23C376;
+  --progress-bar-circle-full: rgba(35,195,118,0.08);
+  --progress-bar-circle-width: 32px;
+  --progress-bar-circle-height: 32px;
+  --progress-bar-circle-inner: #FFFACD;
 }
