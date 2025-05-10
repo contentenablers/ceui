@@ -28,7 +28,6 @@
   --button-tertiary-color: #002873;
   --button-tertiary-background-color: #fffff;
   --card-padding-primary: 16px;
-  --card-primary-image-height: 160.88px;
   --card-primary-height: 308.88px;
   --card-primary-width: 286.01;
   --card-primary-border-radius: 12px;
@@ -36,7 +35,8 @@
   --card-primary-border-color: #E2E1E1;
   --card-secondary-height: 206px;
   --card-secondary-width: 224px;
-  --card-secondary-image-height: 126px;
+  --card-header-width: 320px;
+  --card-header-height: 320px;
   --accordion-padding: 24px;
   --accordion-gap: 24px;
   --accordion-border-radius: 12px;
