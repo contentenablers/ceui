@@ -12,7 +12,7 @@ interface CardImageProps {
 
 
 const CardImage: React.FC<CardImageProps> = ({ src, alt, height, menu }) => {
-  const { layout, buttons, position } = useCardContext();
+  const { layout, button, position } = useCardContext();
   // console.log(height)
 
   return (

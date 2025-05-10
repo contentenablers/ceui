@@ -58,6 +58,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={disabled}
       className={`py-1.5 px-2 flex items-center gap-1 ${className} ${BUTTON_VARIANT[variant]} ${SIZE[size]}`}
       ref={ref}
+      style={style}
     >
       {startIcon && getIcon(startIcon)}
       <span>{children}</span>

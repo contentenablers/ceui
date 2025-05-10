@@ -27,12 +27,23 @@ textarea{
 .prefix_suffix-input-area{
     display: flex;
     align-items: center;
-    @apply border p-2 rounded-3xl !important;
+    @apply border p-1 rounded-3xl !important;
+    line-height: 20px;
+    font-size: 14px;
+    border:none;
+}
+.prefix_suffix-input-area input::placeholder{
+    color:#00297580
 }
 .ceui-input-prefix,
 .ceui-input-suffix {
     margin: 0 0.5rem;
+    
 }
+.ceui-input-suffix {
+    margin: 0 0 0 0.5rem !important;
+}
+
 
 .prefix_suffix-input:focus-visible{
   border:none;

@@ -23,13 +23,13 @@ export const SimpleList: Story = {
         title: 'Item 1', 
         description: 'This is a simple list item', 
         // prefix: <span>✔️</span>, 
-        suffix: <span>▶️</span> 
+        suffix: <span>▶</span>  
       },
       { 
         title: 'Item 2', 
         description: 'Another item in the list', 
         // prefix: <span>✔️</span>, 
-        suffix: <span>▶️</span> 
+        suffix: <span>▶</span> 
       },
     ],
   },

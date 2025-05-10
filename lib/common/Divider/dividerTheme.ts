@@ -22,6 +22,7 @@ export const DIVIDER_VARIANTS = {
     dark_gray: '#a0a0a0',
     light_gray: '#f5f5f5',
     black: '#000',
+    navbar:'#00287327'
   } as const;
   
   export const DIVIDER_THICKNESS = {

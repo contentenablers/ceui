@@ -14,7 +14,8 @@
   .list-content {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: 40px;
+    align-items: center;
   }
   
   .list-prefix,
@@ -35,12 +36,15 @@
     word-wrap: break-word;
     display: flex;
     overflow: hidden;
+    font-size: 16px;
+    line-height: 20px;
     /* white-space: nowrap; */
     /* text-overflow: ellipsis; */
   }
   
   .list-description {
-    font-size: 12px;
+    line-height: 20px;
+    font-size: 14px;
     color: gray;
     white-space: nowrap;
     overflow: hidden;

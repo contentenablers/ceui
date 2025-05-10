@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import Accordion from "../lib/common/Accordion";
 
-const meta = {
+const meta:  Meta<typeof Accordion> = {
   title: "Common/Accordion",
   component: Accordion,
   tags: ["autodocs"],
@@ -64,7 +64,7 @@ export const WithFrontIcon: Story = {
     iconPosition: "start",
     width: "700px",
     className: "p-4",
-    items: CustomBackground.args.items,
+    items: CustomBackground?.args?.items,
   },
 };
 
@@ -74,7 +74,7 @@ export const WithBackIcon: Story = {
     iconPosition: "end",
     width: "700px",
     className: "p-4",
-    items: CustomBackground.args.items,
+    items: CustomBackground?.args?.items,
   },
 };
 

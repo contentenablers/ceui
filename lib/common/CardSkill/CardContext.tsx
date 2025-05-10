@@ -1,17 +1,18 @@
 // CardContext.tsx
 import React, { createContext, useContext } from 'react';
+import {ButtonProps} from '../SkillButton/SkillButton';
 
-interface Button {
-  size: "small" | "medium" | "large" | undefined;
-  variant: "default" | "primary" | "secondary" | "primary-outline" | "secondary-outline" | "primary-card" | "secondary-card" | undefined;
-  label: string;
-  onClick: () => void;
-}
+// interface Button {
+//   size: "small" | "medium" | "large" | undefined;
+//   variant: "default" | "primary" | "secondary" | "primary-outline" | "secondary-outline" | "primary-card" | "secondary-card" | undefined;
+//   label: string;
+//   onClick: () => void;
+// }
 
 interface CardContextProps {
   layout: 'card-col' | 'card-row';
   position: 'onImage' | 'atEnd';
-  buttons: Button[];
+  button: (ButtonProps & { label: string })[];
 }
 
 const CardContext = createContext<CardContextProps | undefined>(undefined);
@@ -29,10 +30,10 @@ interface CardProviderProps extends CardContextProps {
 export const CardProvider: React.FC<CardProviderProps> = ({
   layout,
   position,
-  buttons,
+  button,
   children
 }) => (
-  <CardContext.Provider value={{ layout, position, buttons }}>
+  <CardContext.Provider value={{ layout, position, button }}>
     {children}
   </CardContext.Provider>
 );

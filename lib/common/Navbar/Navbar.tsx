@@ -1,57 +1,68 @@
 import React from 'react';
 import './Navbar.css';
-const Input=React.lazy(()=>import ('../Input'));
-const Icon =React.lazy(()=>import('../Icon'));
-const Chip=React.lazy(()=>import('../Chip'));
-const LazyImage=React.lazy(()=>import('../LazyImage'));
+import Divider from '../Divider';
 
-/**
- * A React functional component for rendering a customizable navigation bar.
- *
- * @param {string} [brandLogo=''] - The URL of the logo image to display in the navbar.
- * @param {Array<{ element: React.ReactNode }>} [actions] - An array of elements to display as actions or links in the navbar.
- * @param {'white'|'gray'} [theme] - The theme of the navbar, which can be either 'white' or 'gray'.
- * @param {string} [className] - Additional CSS classes to apply to the navbar for custom styling.
- * @param {Parameters<typeof Input>[0]} [searchArgs] - Props to pass to the search input component.
- * @param {object} props - Additional props to be spread onto the <nav> element.
- * 
- * @returns {JSX.Element} The rendered navbar component.
- */
+const Input = React.lazy(() => import('../Input'));
+const Icon = React.lazy(() => import('../Icon'));
+const Chip = React.lazy(() => import('../Chip'));
+const divider = React.lazy(()=> import('../Divider'))
+const LazyImage = React.lazy(() => import('../LazyImage'));
 
 interface NavbarProps {
   brandLogo?: string;
-  actions?: any,
+  actions?: Array<{ element: React.ReactNode }>;
   theme?: 'white' | 'gray';
-  className?: string
-  searchArgs?: Parameters<typeof Input>[0]
+  className?: string;
+  searchArgs?: Parameters<typeof Input>[0];
 }
 
-
-
-const Navbar: React.FC<NavbarProps> = ({ brandLogo='', actions, theme, className, searchArgs={}, ...props }) => {
-
+const Navbar: React.FC<NavbarProps> = ({
+  brandLogo = '',
+  actions = [],
+  theme = 'white',
+  className = '',
+  searchArgs = {},
+  ...props
+}) => {
   return (
-    <nav {...props} className={`ceui-navbar className grid grid-cols-3 ${className}  ceui-${theme}-navbar`}>
+    <nav 
+      {...props}
+      className={`ceui-navbar ${className} ceui-${theme}-navbar`}
+    >
       <div className="ceui-navbar-brand">
-          <div className='ceui-navbar-brand-logo'>
-            <LazyImage src={brandLogo} alt="Brand Logo" className='brand-log-img' height='100%' width='100%'  loading='lazy' />
-          </div>
+        <div className="ceui-navbar-brand-logo">
+          <LazyImage
+            src={brandLogo}
+            alt="Brand Logo"
+            className="brand-log-img"
+            height="100%"
+            width="100%"
+            loading="lazy"
+          />
+        </div>
+        <Divider orientation="vertical" variant="solid" thickness="medium" color="navbar" height="30px" />
       </div>
-      <div className="ceui-navbar-search space-x-6">
-          <Input 
-           prefix={<Icon name="search"  />}
-           suffix={<Chip label="Shift + F" className='ceui-navbar-search-chip' variant="default" />}
-           {...searchArgs}
-           variant="prefix_suffix"
-           className={`ceui-${theme}-navbar ceui-navbar-search-input`}
-           placeholder="Search Files, Templates & More..."  
-           />
+
+      <div className="ceui-navbar-search">
+        <Input
+          prefix={<Icon name="search" />}
+          suffix={
+            <Chip
+              label="Shift + F"
+              className="ceui-navbar-search-chip"
+              variant="navbar"
+            />
+          }
+          {...searchArgs}
+          variant="prefix_suffix"
+          className="ceui-navbar-search-input"
+          placeholder="Search Files, Templates & More..."
+        />
       </div>
-      <div className='ceui-navbar-actions display-flex space-x-4'>
-        {actions?.map((act:any, index:number) => (
-          <span key={index}>
-             {act.element}
-          </span>
+
+      <div className="ceui-navbar-actions">
+        {actions.map((act, index) => (
+          <span key={index}>{act.element}</span>
         ))}
       </div>
     </nav>

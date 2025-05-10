@@ -15,6 +15,7 @@ type DividerProps = {
   thickness?: keyof typeof DIVIDER_THICKNESS;
   color?: keyof typeof DIVIDER_COLORS;
   padding?: string;
+  height: string;
   label?: string;
   className?: string;
   style?: React.CSSProperties; // ✅ Added `style` for custom dimensions
@@ -27,6 +28,7 @@ const Divider: React.FC<DividerProps> = ({
   thickness = 'medium',
   color = 'gray',
   padding = '0',
+  height= "",
   label = '',
   className = '',
   style = {},
@@ -37,7 +39,7 @@ const Divider: React.FC<DividerProps> = ({
       <div
         className={dividerClass}
         style={{
-          height: '100%', // ✅ Inherits parent height
+          height: height || '100%', // ✅ Inherits parent height
           borderLeft: `${DIVIDER_THICKNESS[thickness]}px ${variant} ${DIVIDER_COLORS[color]}`,
         }}
       />

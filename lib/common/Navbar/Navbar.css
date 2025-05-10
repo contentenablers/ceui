@@ -1,44 +1,61 @@
 .ceui-navbar {
-    @apply flex sticky items-center w-full z-[1000] gap-x-4 bg-[red] min-h-[64px] top-0 inset-x-0;
-    @apply bg-white justify-between px-3;
-}
-.ceui-navbar-search {
-    @apply max-w-[30%] w-full;
-}
-.ceui-navbar-brand {
-    @apply w-3/12;
-}
-.ceui-navbar-brand-logo {
-    @apply max-w-[15%] h-[45px];
-}
-.brand-log-img {
+    @apply flex items-center justify-between w-full px-4 py-2  shadow-md z-[1000] sticky top-0;
+    background-color: #f9fafb;
+    min-height: 64px;
+    gap: 1rem;
+  }
+  
+  .ceui-navbar-brand {
+    @apply flex items-center justify-start ; /* Add spacing here */
+    gap: 20px;
+  }
+  
+  .ceui-navbar-brand-logo {
+    @apply  rounded-full overflow-hidden flex items-center justify-center;
+    /* height: 22px; */
+    width: 22px;
+  }
+  
+  .brand-log-img {
     object-fit: contain;
-}
-.ceui-navbar-search-chip{
-    transition: all 0.8s ease-in-out;
-}
-.ceui-navbar-actions {
-    @apply min-w-[30%] ;
-    justify-content: end;
-    @apply flex items-center;
-}
-.ceui-navbar-search-input:active{
+    height: 100%;
     width: 100%;
-}
-
-.ceui-navbar-search-input:hover .ceui-navbar-search-chip,
-.ceui-navbar-search-input:focus-visible  .ceui-navbar-search-chip{
-  opacity: 0;
-  scale:0;
-}
-
-/* theme */
-.ceui-gray-navbar {
-    @apply bg-[color:var(--color-p4)];
-}
-
-
-/* input area white */
-.prefix_suffix-input-area {
-    @apply bg-[color:var(--color-white)];
-}
+  }
+  
+  .ceui-navbar-search {
+    @apply flex-grow max-w-[500px];
+    margin-left: 1rem; /* More spacing between logo and search */
+  }
+  
+  .ceui-navbar-search-input {
+    @apply w-full  rounded-full bg-white border border-gray-200 shadow-sm transition-all duration-300 text-sm;
+  }
+  
+  .ceui-navbar-search-chip {
+    @apply text-xs px-2 py-1 bg-gray-100 rounded-full text-gray-600 font-medium transition-all duration-300 ease-in-out;
+  }
+  
+  .ceui-navbar-search-input:hover .ceui-navbar-search-chip,
+  .ceui-navbar-search-input:focus-visible .ceui-navbar-search-chip {
+    opacity: 0;
+    scale: 0;
+  }
+  
+  .ceui-navbar-actions {
+    @apply flex items-center justify-end  min-w-[200px]; /* Reduced gap */
+    gap:8px;
+  }
+  
+  .ceui-navbar-actions span button {
+    padding: 6px !important;
+  }
+  
+  /* Theme variants */
+  .ceui-white-navbar {
+    background-color: #ffffff;
+  }
+  
+  .ceui-gray-navbar {
+    background-color: #00287314;
+  }
+  

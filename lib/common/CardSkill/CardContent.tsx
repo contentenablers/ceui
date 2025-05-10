@@ -6,7 +6,7 @@ interface CardContentProps {
 }
 
 const CardContent: React.FC<CardContentProps> = ({ children }) => {
-  const { layout,buttons,position } = useCardContext();
+  const { layout,button,position } = useCardContext();
   return (
     <div className="card-content">
       <div>

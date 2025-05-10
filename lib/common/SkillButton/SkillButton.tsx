@@ -62,7 +62,7 @@ const Button: React.FC<ButtonProps> = ({
       fontSize: getVar(`--button-typography-primary-fontSize`),
     });
   }, [variant]);
-console.log(themeVars);
+
   const getIcon = (name: keyof typeof IconsList) => (
     <SuspenseWrapper>
       <Icon {...iconArgs} name={name} />

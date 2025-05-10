@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Chip } from "../lib/common";
-import { SIZE, CHIP_VARIANT } from "../lib/utils/ThemeList";
 import IconsList from "../lib/common/Icon/IconsList";
 import { userEvent, within } from "@storybook/test";
 
@@ -19,7 +18,7 @@ const meta: Meta<typeof Chip> = {
     },
     variant: {
       control: "select",
-      options: Object.keys(CHIP_VARIANT),
+      options:['primary' ,'secondary' , 'navbar'],
       description: "Choose the chip style (e.g., primary, secondary).",
     },
     startIcon: {
@@ -37,11 +36,6 @@ const meta: Meta<typeof Chip> = {
       description:
         "Custom properties for the icon component (e.g., color, size).",
     },
-    size: {
-      options: Object.keys(SIZE),
-      control: "select",
-      description: "Select the chip size (small, medium, large).",
-    }
   },
   parameters: { 
     layout: "centered",
@@ -59,20 +53,19 @@ type Story = StoryObj<typeof Chip>;
 // Helper Function to Create Icon Stories
 const createStory = (
  label:string,
-  size: keyof typeof SIZE,
   startIcon?:  keyof typeof IconsList,
 ): Story => ({
   args: {
     label,
-    size,
     startIcon,
   },
 });
 
-export const SecondaryOutline: Story = {
+
+export const Secondaryout: Story = {
   args: {
     label: "Default Chip",
-    variant:'default',
+    variant:'secondary',
     startIcon: "search",
   },
   play: async ({ canvasElement }) => {
@@ -89,5 +82,5 @@ export const SecondaryOutline: Story = {
  * Showcases different icons in various sizes.
  * Icon colors are based on the CEUI theme ( c1, c2 )
  */
-export const Primary = createStory("Shift+F", 'medium');
-export const Secondary = createStory("Course Duration", 'medium', "settings");
+export const Primary = createStory("Strengths Assessment");
+export const Secondary = createStory("Course Duration", "settings");

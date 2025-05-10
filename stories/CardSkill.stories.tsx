@@ -43,26 +43,26 @@ const defaultButtons = [
   { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked') },
 ];
 
-export const ColumnLayoutWithButtonsOnImage: Story = {
-  args: {
-    layout: 'card-col',
-    position: 'onImage',
-    buttons: [
-      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'large' },
-      { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'medium' },
-      { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'primary', size: 'medium' },
-    ],
-    children: (
-      <>
-        <CardImage src={sampleImage} alt="Sample Image" height={0} menu={false} />
-        <CardContent>
-          <h3>Column Layout with Buttons on Image</h3>
-          <p>This card displays buttons on the image when hovered.</p>
-        </CardContent>
-      </>
-    ),
-  },
-};
+// export const ColumnLayoutWithButtonsOnImage: Story = {
+//   args: {
+//     layout: 'card-col',
+//     position: 'onImage',
+//     buttons: [
+//       { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'large' },
+//       { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'medium' },
+//       { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'primary', size: 'medium' },
+//     ],
+//     children: (
+//       <>
+//         <CardImage src={sampleImage} alt="Sample Image" height={0} menu={false} />
+//         <CardContent>
+//           <h3>Column Layout with Buttons on Image</h3>
+//           <p>This card displays buttons on the image when hovered.</p>
+//         </CardContent>
+//       </>
+//     ),
+//   },
+// };
 
 // export const RowLayoutWithButtonsOnImage: Story = {
 //   args: {
@@ -86,82 +86,82 @@ export const ColumnLayoutWithButtonsOnImage: Story = {
 //   },
 // };
 
-export const ColLayoutWithButtonsAtEnd: Story = {
-  args: {
-    layout: 'card-col',
-    position: 'atEnd',
-    src: sampleImage,
-    title: "Sample Image",
-    buttons: [
-      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'medium' },
-      { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'medium' },
-      { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'primary', size: 'medium' },
-    ],
-    children: (
-      <>
-        <CardContent>
-          <h3>Row Layout with Buttons at End</h3>
-          <p>This card displays buttons at the end by default.</p>
-        </CardContent>
-      </>
-    ),
-  },
-};
-export const RowLayoutWithButtonsAtEnd: Story = {
-  args: {
-    layout: 'card-row',
-    position: 'atEnd',
-    src: sampleImage,
-    title: "Sample Image",
-    buttons: [
-      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'medium' },
-      { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'medium' },
-      { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'primary', size: 'medium' },
-    ],
-    children: (
-      <>
-        <CardContent>
-          <h3>Row Layout with Buttons at End</h3>
-          <p>This card displays buttons at the end by default.</p>
-        </CardContent>
-      </>
-    ),
-  },
-};
-export const RowLayoutWithoutButtons: Story = {
-  args: {
-    layout: 'card-row',
-    src: sampleImage,
-    title: "Sample Image",
-    children: (
-      <>
-        <CardContent>
-          <h3>Row Layout with Buttons at End</h3>
-          <p>This card displays buttons at the end by default.</p>
-        </CardContent>
-      </>
-    ),
-  },
-};
+// export const ColLayoutWithButtonsAtEnd: Story = {
+//   args: {
+//     layout: 'card-col',
+//     position: 'atEnd',
+//     src: sampleImage,
+//     title: "Sample Image",
+//     buttons: [
+//       { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'medium' },
+//       { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'medium' },
+//       { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'primary', size: 'medium' },
+//     ],
+//     children: (
+//       <>
+//         <CardContent>
+//           <h3>Row Layout with Buttons at End</h3>
+//           <p>This card displays buttons at the end by default.</p>
+//         </CardContent>
+//       </>
+//     ),
+//   },
+// };
+// export const RowLayoutWithButtonsAtEnd: Story = {
+//   args: {
+//     layout: 'card-row',
+//     position: 'atEnd',
+//     src: sampleImage,
+//     title: "Sample Image",
+//     buttons: [
+//       { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'medium' },
+//       { label: 'Resume', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'medium' },
+//       { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'primary', size: 'medium' },
+//     ],
+//     children: (
+//       <>
+//         <CardContent>
+//           <h3>Row Layout with Buttons at End</h3>
+//           <p>This card displays buttons at the end by default.</p>
+//         </CardContent>
+//       </>
+//     ),
+//   },
+// };
+// export const RowLayoutWithoutButtons: Story = {
+//   args: {
+//     layout: 'card-row',
+//     src: sampleImage,
+//     title: "Sample Image",
+//     children: (
+//       <>
+//         <CardContent>
+//           <h3>Row Layout with Buttons at End</h3>
+//           <p>This card displays buttons at the end by default.</p>
+//         </CardContent>
+//       </>
+//     ),
+//   },
+// };
 
 
-export const ColumnWithoutButtons: Story = {
-  args: {
-    layout: 'card-col',
-    children: (
-      <>
-        <CardImage src={sampleImage} alt="Sample Image" height={0} menu={false}  />
-        <CardContent>
-          <h3>Column Layout + Extra Content</h3>
-          <p>Additional text and icons can be included for enhanced details.</p>
-          <div className="extra-content">
-            <span>🌟 Special Offer Available</span>
-          </div>
-        </CardContent>
-      </>
-    ),
-  },
-};
+// export const ColumnWithoutButtons: Story = {
+//   args: {
+//     layout: 'card-col',
+//     children: (
+//       <>
+//         <CardImage src={sampleImage} alt="Sample Image" height={0} menu={false}  />
+//         <CardContent>
+//           <h3>Column Layout + Extra Content</h3>
+//           <p>Additional text and icons can be included for enhanced details.</p>
+//           <div className="extra-content">
+//             <span>🌟 Special Offer Available</span>
+//           </div>
+//         </CardContent>
+//       </>
+//     ),
+//   },
+// };
 
 const Bookmark = () => {
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -188,14 +188,13 @@ export const CardWithBookmark: Story = {
     layout: 'card-col',
     position: 'onImage',
     buttons: [
-      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary-card', size: 'medium' },
-      { label: 'Start Course', onClick: () => console.log('Resume clicked'), variant: 'secondary-card', size: 'medium' },
-      // { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'outline', size: 'medium' },
+      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary', size: 'medium' },
+      { label: 'Start Course', onClick: () => console.log('Resume clicked'), variant: 'secondary', size: 'medium' },
+      // { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'secondary', size: 'medium' },
     ],
-    width: '286px',
-    height: '307px',
+    variant:"primary",
     menu: true,
-    mediaHeight: 0.55,
+    mediaHeight: 0.52,
     src: "https://zvelo.com/wp-content/uploads/2018/11/anatomy-of-a-full-path-url-hostname-tld-path-protocol.jpg",
     title: "Sample Image",
     children: (
@@ -236,13 +235,7 @@ export const CardWithheaderAndVideo: Story = {
   args: {
     layout: 'card-col',
     position: 'onImage',
-    buttons: [
-      { label: 'Preview', onClick: () => console.log('Preview clicked'), variant: 'primary-card', size: 'medium' },
-      { label: 'Start Course', onClick: () => console.log('Resume clicked'), variant: 'secondary-card', size: 'medium' },
-      // { label: 'Edit Instance', onClick: () => console.log('Edit Instance clicked'), variant: 'outline', size: 'md' },
-    ],
-    width: '320px',
-    height: '320px',
+    variant:"header",
     menu: true,
     mediaHeight: 0.6,
     src: "https://assets.contentenablers.com/website/videos/modsum/us-import-valuation-overview-course-preview.mp4",
@@ -273,6 +266,33 @@ export const CardWithheaderAndVideo: Story = {
             <div className='name'>Marvin McKinney</div>
             <div className='info'>Finance Controller at Boeing</div>
           </div>
+        </div>
+      </CardContent>
+    ),
+  },
+};
+export const CardWithheVideo: Story = {
+  args: {
+    layout: 'card-col',
+    // position: 'onImage',
+    variant:"secondary",
+    menu: true,
+    mediaHeight: 0.61,
+    src: "https://assets.contentenablers.com/website/videos/modsum/us-import-valuation-overview-course-preview.mp4",
+    title: "Sample Image",
+    mediaType: "video",
+    children: (
+      <CardContent>
+         <div className="title-container">
+          <h3 className="title">
+            Mastering Air Traffic Control Protocols: Enhancing Efficiency and Safety Through
+            Mastering Air Traffic Control Protocols: Enhancing Efficiency and Safety Through
+            Mastering Air Traffic Control Protocols: Enhancing Efficiency and Safety Through
+            Mastering Air Traffic Control Protocols: Enhancing Efficiency and Safety Through
+            Mastering Air Traffic Control Protocols: Enhancing Efficiency and Safety Through
+            Mastering Air Traffic Control Protocols: Enhancing Efficiency and Safety Through
+          </h3>
+          <Bookmark />
         </div>
       </CardContent>
     ),
