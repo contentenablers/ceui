@@ -21,4 +21,5 @@ export { default as List } from './List';
 export { default as Accordion } from './Accordion';
 export {default as DropDown} from "./DropDown"
 export {default as SkillButton} from "./SkillButton"
-export {default as SelectBox} from "./SelectBox"
+export {default as SelectBox} from "./SelectBox";
+export {default as Model} from "./Model";

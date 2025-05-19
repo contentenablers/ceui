@@ -15,6 +15,7 @@
     /* Common Colors */
     --color-white: #ffffff;
     --color-black:#000;
+    --color-overlay:#00287352;
 
     /* Custom ease */
     --ease-custom-p1: cubic-bezier(0.4, 0, 0.2, 1);
