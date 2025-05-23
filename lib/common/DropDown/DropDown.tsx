@@ -9,11 +9,7 @@ import {SELECT_BOX_VARIANT} from '../../utils/ThemeList'
 const Icon = React.lazy(() => import('../Icon'));
 
 // Define types for the props
-interface DropDownItem {
-  label: string;
-  value: string;
-  data?:any
-}
+
 
 /**
  * A dropdown menu component that takes a label and an array of items.
@@ -25,10 +21,12 @@ interface DropDownItem {
  */
 interface DropDownProps {
   value: string;
-  items: DropDownItem[];
+  items: [];
   className?: string;
   variant?: keyof typeof SELECT_BOX_VARIANT;
-  onClick: (e: DropDownItem) => void;
+  onClick: (e:object) => void;
+  label: string;
+  key:string;
 }
 
 const DropDown: React.FC<DropDownProps> = ({
@@ -37,15 +35,23 @@ const DropDown: React.FC<DropDownProps> = ({
   onClick,
   className = '',
   variant='primary',
+  label,
+  key
 }) => {
 
  const handleClick = useCallback(
-  (item: DropDownItem) => () =>{
+   (item: object) => () =>{
      onClick(item)
     },
   []
 );
 
+// const selectedValue =() => {
+//   const found = items?.find((element) => {element[key as string] === value})?.[label];
+//   const labelValue = found ? found[label] : undefined;
+//   console.log(found,items,"selectedValue",labelValue,value);
+//   return labelValue
+// }
   return (
     <div className={`${className}`}>
       <Menu>
@@ -67,7 +73,7 @@ const DropDown: React.FC<DropDownProps> = ({
           {items.map((item, index) => (
             <MenuItem key={index}>
              <Button onClick={handleClick(item)} className={`ceui-element ceui-drop-down-menu  menu-item-${className}  group border-none ${SELECT_BOX_VARIANT[variant]['di']} flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10`} variant='default'>
-                {item?.label}
+                {item?.[label]}
              </Button>
             </MenuItem>
           ))}
