@@ -1,4 +1,8 @@
 .ceui-drop-down{
     box-shadow:var(--box-shadow-p1);
-    overflow: hidden !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    background: var(--color-white) !important;
+    max-height: 300px !important;
+    box-shadow: var(--box-shadow-p2);
 }
