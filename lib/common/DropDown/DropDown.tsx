@@ -21,7 +21,7 @@ const Icon = React.lazy(() => import('../Icon'));
  */
 interface DropDownProps {
   value: string;
-  items: [];
+  items:any [];
   className?: string;
   variant?: keyof typeof SELECT_BOX_VARIANT;
   onClick: (e:object) => void;
