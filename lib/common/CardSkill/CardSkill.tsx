@@ -31,6 +31,7 @@ interface CardProps {
   title: string;
   header?: React.ReactNode;
   variant?: Variant;
+  onMenuClick?: () => void;
 }
 
 const CardSkill: React.FC<CardProps> = ({
@@ -47,6 +48,7 @@ const CardSkill: React.FC<CardProps> = ({
   mediaHeight = 0.7,
   mediaType = 'image',
   variant = 'primary',
+  onMenuClick = () => {},
 }) => {
   const [themeVars, setThemeVars] = useState<CardThemeVars | null>(null);
 
@@ -104,7 +106,7 @@ const CardSkill: React.FC<CardProps> = ({
         {header && <div className="p-4">{header}</div>}
 
         {mediaType === 'image' ? (
-          <CardImage alt={title} src={src} height={mediaPixelHeight} menu={menu} />
+          <CardImage alt={title} src={src} height={mediaPixelHeight} menu={menu}  onMenuClick={onMenuClick} />
         ) : (
           <video
             src={src}
@@ -112,7 +114,7 @@ const CardSkill: React.FC<CardProps> = ({
             controls
           />
         )}
-        <div style={{ padding: themeVars?.padding,}}>
+        <div className='card-content-container' style={{ padding: themeVars?.padding,}}>
         {children}
         </div>
       </div>

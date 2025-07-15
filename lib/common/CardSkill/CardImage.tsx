@@ -1,17 +1,20 @@
 import React from 'react';
 import { useCardContext } from './CardContext';
 import CardActions from './CardActions';
+import Icon from '../Icon';
 
 interface CardImageProps {
   src: string;
   alt: string;
   height: number;
-  menu: boolean
+  menu: boolean;
+  onMenuClick?: () => void;
 }
 
 
 
-const CardImage: React.FC<CardImageProps> = ({ src, alt, height, menu }) => {
+const CardImage: React.FC<CardImageProps> = ({ src, alt, height, menu , onMenuClick}) => {
+  const [editMode, setEditMode] = React.useState(false);
   const { layout, button, position } = useCardContext();
   // console.log(height)
 
@@ -20,18 +23,8 @@ const CardImage: React.FC<CardImageProps> = ({ src, alt, height, menu }) => {
       <img src={src} alt={alt} className="card-image" />
       {position === "onImage" &&
         <>
-          {menu && <div className='card-three-dots'>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="white"
-            >
-              <circle cx="12" cy="5" r="2" />
-              <circle cx="12" cy="12" r="2" />
-              <circle cx="12" cy="19" r="2" />
-            </svg>
+          {menu && <div className='card-three-dots' onClick={onMenuClick}>
+            <Icon name="edit" size={20}  />
           </div>}
           <div className='backdrop'></div>
           <div className='card-image-buttons'>
