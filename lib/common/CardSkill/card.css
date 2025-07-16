@@ -35,6 +35,10 @@
     backdrop-filter: blur(2px);
     background-color: rgba(0, 0, 0, 0.347);
   }
+
+  .card-content-container{
+    height: 100%;
+  }
   
   
   .card-row .card-image-container {
@@ -173,8 +177,12 @@
     cursor: pointer;
     z-index: 2;
     top:10%;
-    right:5%
+    right:5%;
   }
+  .card-three-dots svg path{
+      color: #fff;
+
+    }
   .card-three-dots{
     display: none;
   }
